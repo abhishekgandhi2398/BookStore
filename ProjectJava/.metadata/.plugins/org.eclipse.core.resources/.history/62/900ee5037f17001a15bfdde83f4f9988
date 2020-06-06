@@ -1,0 +1,8 @@
+<%@page import="com.BookStore.Dao.CartDao"%>
+
+<%
+
+
+CartDao.deleteall();
+response.sendRedirect(".jsp");
+%>

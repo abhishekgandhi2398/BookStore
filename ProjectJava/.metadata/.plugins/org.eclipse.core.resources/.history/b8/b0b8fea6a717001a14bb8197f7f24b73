@@ -1,0 +1,90 @@
+package com.BookStore.User;
+
+public class Order {
+
+	String name,address,city,pincode,bname;
+	Date d;
+	long mobile;
+	int id;
+	int dpirce,gt,qty,price,amt;
+	
+	
+	
+	
+	public int getAmt() {
+		return amt;
+	}
+	public void setAmt(int amt) {
+		this.amt = amt;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+	public String getBname() {
+		return bname;
+	}
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+	public long getMobile() {
+		return mobile;
+	}
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getDpirce() {
+		return dpirce;
+	}
+	public void setDpirce(int dpirce) {
+		this.dpirce = dpirce;
+	}
+	public int getGt() {
+		return gt;
+	}
+	public void setGt(int gt) {
+		this.gt = gt;
+	}
+	public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+	
+	
+	
+}

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+String pid=(String)session.getAttribute("pid");
+String uid=(String)session.getAttribute("mobno");
+
+
+String q=request.getParameter("qty");
+out.write(q);
+out.print(pid);
+out.print(uid);
+
+
+if(uid==null)
+{
+out.print("<a href='ulogin.jsp'>login</a>");
+}
+else
+{
+out.print("<a href='ulogout.jsp'>Logout</a>");
+}
+	
+
+%>
+
+
+
+</body>
+</html>

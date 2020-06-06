@@ -1,0 +1,38 @@
+<%@ page import="com.BookStore.Dao.UserDao" language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<jsp:useBean id="u" class="com.BookStore.User.User"></jsp:useBean>
+<jsp:setProperty property="*" name="u"/>
+
+<%
+
+long mob=Long.parseLong(request.getParameter("mobile"));
+session.setAttribute
+
+%>
+
+<%
+
+boolean a=false;
+a=UserDao.singinvals(u);
+
+if(a==true)
+{
+	out.write("Done");
+}
+else
+{
+	out.write("Not Done");
+}
+
+%>
+
+</body>
+</html>

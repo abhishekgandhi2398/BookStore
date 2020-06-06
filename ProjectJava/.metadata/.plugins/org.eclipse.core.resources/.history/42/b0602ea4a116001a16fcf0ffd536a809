@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="container">
+
+<%
+String pid=(String)session.getAttribute("pid");
+String uid=(String)session.getAttribute("mobno");
+
+
+String q=request.getParameter("qty");
+
+
+if(uid==null)
+{
+out.write("<h1>You've not signed in <br> Please click on below link to purchase further</h1>");
+}
+
+%>
+
+
+<div>
+
+<br>
+
+<p>You've selected below products</p>
+
+<br>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+</body>
+</html>

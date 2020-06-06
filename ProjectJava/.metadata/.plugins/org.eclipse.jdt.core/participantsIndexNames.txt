@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+D:\ProjectJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1754843936.index
+\Online-Book-Store-JSP\Online Book Store JSP\OnlineBookStore-app-client\test
+D:\ProjectJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3787708678.index
+\Online-Book-Store-JSP
+D:\ProjectJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\353841146.index
+\BookStore\src
+D:\ProjectJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3248771723.index
+\BookStore\src
+D:\ProjectJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2988904654.index
+\Online-Book-Store-JSP\Online Book Store JSP\OnlineBookStore-app-client\test

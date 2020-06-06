@@ -1,0 +1,64 @@
+package com.BookStore.User;
+
+public class Order {
+
+	String name,address,city,pincode,bname;
+	long mobile,id;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	int dpirce,gt;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+	public String getBname() {
+		return bname;
+	}
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+	public long getMobile() {
+		return mobile;
+	}
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
+	}
+	public int getDpirce() {
+		return dpirce;
+	}
+	public void setDpirce(int dpirce) {
+		this.dpirce = dpirce;
+	}
+	public int getGt() {
+		return gt;
+	}
+	public void setGt(int gt) {
+		this.gt = gt;
+	}
+	
+}

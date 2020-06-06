@@ -1,0 +1,11 @@
+package com.BookStore.User;
+
+public class Order {
+
+	String name,address,city,pincode,bname;
+	long mobile;
+	int id;
+	int dpirce,gt;
+	
+		
+}

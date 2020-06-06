@@ -1,0 +1,10 @@
+<%@page import="com.BookStore.Dao.CartDao"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<jsp:useBean id="u" class="com.BookStore.User.Cart"></jsp:useBean>
+<jsp:setProperty property="*" name="u"/>
+
+<%
+CartDao.delete(u);
+response.sendRedirect("admin_view_users.jsp");
+%>

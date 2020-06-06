@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"    import="com.BookStore.Dao.ProductDao,com.BookStore.User.*,java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" ></script>
+
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FF4948">
+  <img src="img/logo.png" class="navbar-brand">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="1.jsp">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="User_Products.jsp">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     
+     <%
+String q=(String)session.getAttribute("mobno");
+
+if(q==null)
+{
+     %>
+       <li class="nav-item">
+        <a class="nav-link" href="ulogin.jsp">Login</a>
+      </li>
+<%}
+else
+{ %>
+      <li class="nav-item">
+        <a class="nav-link" href="vc.jsp">View Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vieworderuser.jsp">View Orders</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="ulogout.jsp">Logout</a>
+      </li>
+  
+  <%      }
+	
+	
+%>
+      </ul>
+
+    
+    </form>
+  </div>
+</nav>
+
+
+<div class="jumbotron text-center">
+
+
+
+
+<%
+List<Products> list=ProductDao.getAllRecords();
+request.setAttribute("list",list);
+%>
+
+
+
+<div class="container">
+	
+	<br>
+	<div class="row">
+		
+<c:forEach items="${list}" var="u">
+
+
+		<div class="col-mm-4">
+
+			<div class="card" style="width: 30rem; height: 30rem;">
+  		<img src="img/${u.getFcover()}" class="card-img-top">
+  			<div class="card-body">
+   			 <h5 class="card-title">${u.getName()}</h5>
+   				 
+   			 <a href="viewdetailedbooks.jsp?idbooks=${u.getIdbooks()}&?dprice=${u.getDprice()}" class="btn btn-primary">View Details</a>
+  		</div>
+
+		</div>
+		
+			
+		
+		</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</c:forEach>
+
+
+	</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+
+</body>
+</html>

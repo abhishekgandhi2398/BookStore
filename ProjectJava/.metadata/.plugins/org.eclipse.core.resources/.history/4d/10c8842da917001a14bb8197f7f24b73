@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"	
+     import="com.BookStore.Dao.*,com.BookStore.User.*,java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" ></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+
+List<Order> list=OrderDao.getAllRecords();
+request.setAttribute("list",list);
+
+Order o=new Order();
+
+%>
+
+
+
+
+<table>
+
+<tr>
+<td>User ID</td>
+<td>Name</td>
+<td>Address</td>
+<td>Book Name</td>
+<td>Price</td>
+<td>Qty</td>
+<td>Amt</td>
+<td>Date</td>
+<td>Order ID</td>
+</tr>
+
+
+<tr>
+
+<c:forEach items="${list}" var="u">
+
+
+
+</c:forEach>
+
+
+
+</tr>
+
+
+</table>
+
+
+
+		
+
+
+
+
+
+
+</body>
+</html>

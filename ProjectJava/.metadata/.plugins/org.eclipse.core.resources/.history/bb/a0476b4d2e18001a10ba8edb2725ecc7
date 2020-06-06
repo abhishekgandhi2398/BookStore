@@ -1,0 +1,111 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.BookStore.Dao.CartDao,com.BookStore.User.Cart,java.util.*"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+
+<%
+
+String mob=request.getParameter("id");
+session.setAttribute("updid", mob);
+Cart u=CartDao.getRecordById(Integer.parseInt(mob));
+
+%>
+
+
+
+
+
+
+<form action="editct.jsp?id<%= u.getId()%>" method="get">
+
+
+
+<div class="container">
+	
+	
+<div class="jumbotron text-center">
+
+<div class="row">
+
+<div class="col-sm-4">
+Book
+</div>
+
+<div class="col-sm-2">
+Book Name
+</div>
+
+<div class="col-sm-1">
+Quantity
+</div>
+
+
+</div>
+
+
+<div class="row">
+
+<div class="col-sm-4">
+Book
+</div>
+
+<div class="col-sm-2">
+Book Name
+</div>
+
+<div class="col-sm-1">
+Quantity
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<%=u.getId()%>
+
+<%=u.getPrice()%>
+<%=u.getAmt()%>
+<%=u.getQty()%>
+
+<input type="number" value='<%=u.getQty()%>' name=qty>
+${u.getPrice()}
+${u.getAmt()}
+
+<br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+
+
+</body>
+</html>

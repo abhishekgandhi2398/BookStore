@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<a href="new_user.jsp">aaa</a>
+
+<a href="ulogin.jsp">login</a>
+
+<a href="admin_view_users.jsp">View Users</a>
+
+
+<a href="User_Products.jsp">asdasdwq</a>
+
+</body>
+</html>

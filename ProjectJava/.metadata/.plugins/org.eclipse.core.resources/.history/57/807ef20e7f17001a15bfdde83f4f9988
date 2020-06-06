@@ -1,0 +1,8 @@
+<%@page import="com.BookStore.Dao.CartDao"%>
+
+<%
+String m=(String)session.getAttribute("mobno");
+
+CartDao.deleteall();
+response.sendRedirect(".jsp");
+%>

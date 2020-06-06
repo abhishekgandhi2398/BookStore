@@ -1,0 +1,6 @@
+package com.BookStore.User;
+
+public class Snippet {
+	insert into orders(uid,pid,qty,price,amt) select cart.usid,cart.prodid,cart.qty,cart.price,cart.amt from book.cart where cart.usid=8806944173
+}
+

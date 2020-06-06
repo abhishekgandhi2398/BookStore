@@ -1,0 +1,7 @@
+package com.BookStore.User;
+
+public class CartDao {
+
+	int id,userid,prodid,qty,price,amt;
+	
+}

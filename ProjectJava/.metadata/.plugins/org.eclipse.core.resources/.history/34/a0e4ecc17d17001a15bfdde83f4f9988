@@ -1,0 +1,14 @@
+<%@page import="com.BookStore.Dao.CartDao"%>
+<jsp:useBean id="u" class="com.BookStore.User.Cart"></jsp:useBean>
+<jsp:setProperty property="*" name="u"/>
+
+
+<%
+
+String qt=request.getParameter("qty");
+int uqt=Integer.parseInt(qt);
+
+
+CartDao.update(uqt,idb);
+response.sendRedirect("vc.jsp");
+%>

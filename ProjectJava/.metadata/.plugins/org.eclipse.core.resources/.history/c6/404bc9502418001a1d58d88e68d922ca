@@ -1,0 +1,159 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.BookStore.Dao.ProductDao,com.BookStore.User.*,java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color: #FF4948;">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FF4948">
+  <img src="img/logo.png" class="navbar-brand">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="1.jsp">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="User_Products.jsp">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     
+     <%
+String q=(String)session.getAttribute("mobno");
+
+if(q==null)
+{
+     %>
+       <li class="nav-item">
+        <a class="nav-link" href="ulogin.jsp">Login</a>
+      </li>
+<%}
+else
+{ %>
+      <li class="nav-item">
+        <a class="nav-link" href="vc.jsp">View Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vieworderuser.jsp">View Orders</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="ulogout.jsp">Logout</a>
+      </li>
+  
+  <%      }
+	
+	
+%>
+      </ul>
+
+    
+    </form>
+  </div>
+</nav>
+
+
+<%
+String id=request.getParameter("idbooks");
+session.setAttribute("idbook", id);
+Products u=ProductDao.getRecordById(Integer.parseInt(id));
+
+
+
+
+session.setAttribute("pid",id);
+String a=(String)session.getAttribute("pid");
+out.write(a);
+
+%>
+
+<br>
+
+<br>
+
+
+<form action="viewbookinfo.jsp">
+	
+<div class="container">
+	
+	
+<div class="jumbotron text-center">
+	
+	
+	<div class="row">
+	
+	<div class="col-mm-6" style="margin-right: 10px">
+	
+	
+	<div class="flip-card">
+  	<div class="flip-card-inner">
+    <div class="flip-card-front">
+     	<img src="img/<%=u.getFcover()%>" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      	<img src="img/<%=u.getBcover()%>" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+  </div>
+</div>
+	
+	
+		
+	</div>
+	
+	
+	
+	
+	<div class="col-mm-6" style="width: 500px">
+	<b style="font-size: 60px;"><%=u.getName()%></b>
+	
+	
+	<p align="left" style="font-size: 30px;"><del>Original Price &nbsp;&nbsp;&nbsp;<%=u.getOprice()%></del></p>
+
+	<b align="left" style="font-size: 30px;">Discounted Price&nbsp;&nbsp;&nbsp;<%=u.getDprice()%></b>
+	
+	<input type="hidden" name="dprice" value="<%=u.getDprice()%>">
+	
+	
+	<input type="number" name="qtys" class="from form-control">
+	
+	<p>Description
+	
+	<%=u.getComments()%>
+	</p>
+	
+	
+	<input type="submit" value="Add to Cart" class="btn btn-dark">
+		
+	</div>
+	
+	
+	
+	
+	</div>
+	</div>
+	
+	
+</div>
+	
+	
+</form>
+</body>
+</html>

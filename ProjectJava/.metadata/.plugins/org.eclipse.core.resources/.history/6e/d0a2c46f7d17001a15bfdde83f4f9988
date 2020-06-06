@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.BookStore.Dao.CartDao,com.BookStore.User.Cart,java.util.*"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<%
+
+String mob=request.getParameter("id");
+Cart u=CartDao.getRecordById(Integer.parseInt(mob));
+
+%>
+
+
+
+
+
+
+<form action="editct.jsp?id=<% u.getId()%>" method="get">
+
+<%=u.getId()%>
+
+<%=u.getPrice()%>
+<%=u.getAmt()%>
+<%=u.getQty()%>
+
+<input type="number" value='<%=u.getQty()%>' name=qty>
+${u.getPrice()}
+${u.getAmt()}
+
+<br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+
+
+</body>
+</html>

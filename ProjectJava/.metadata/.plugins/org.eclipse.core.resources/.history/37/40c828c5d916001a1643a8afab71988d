@@ -1,0 +1,57 @@
+package com.BookStore.User;
+
+public class CartDao {
+
+	int id,userid,prodid,qty,price,amt;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
+	public int getProdid() {
+		return prodid;
+	}
+
+	public void setProdid(int prodid) {
+		this.prodid = prodid;
+	}
+
+	public int getQty() {
+		return qty;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getAmt() {
+		return amt;
+	}
+
+	public void setAmt(int amt) {
+		this.amt = amt;
+	}
+	
+	
+	
+}
